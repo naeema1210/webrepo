@@ -1,0 +1,27 @@
+<html>
+<body>
+<script>
+function calc1()
+{
+ var x=document.getElementById("number").value;
+ document.getElementById("demo").value=Math.round(x);
+}
+function calc2()
+{
+ var x=document.getElementById("number").value;
+ document.getElementById("demo").value=Math.ceil(x);
+}
+function cal3()
+{
+var x=document.getElementById("number").value;
+ document.getElementById("demo").value=Math.trunc(4.7);
+}
+</script>
+<h4 style="color:red">Number: <input type="text" id="number"></h4><br>
+<button onClick="calc1()">Round</button>
+<button onClick="calc2()">ceil</button>
+<button onClick="calc3()">trunc</button>
+<br>
+<h4 style="color:red">Value:<input type="text" id="demo"></h4> <br>
+</body>
+</html>

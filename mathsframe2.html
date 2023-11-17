@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>JS String and Math Functions</title>
+</head>
+<body bgcolor=linen>
+ <h1 style="color:red">Math Functions</h1>
+    <script>
+function calc1()
+{
+ var x=document.getElementById("number").value;
+ var y=document.getElementById("n1").value;
+var w=document.getElementById("n2").value;
+var z=document.getElementById("n3").value;
+var a=document.getElementById("n4").value;
+var b=document.getElementById("n5").value;
+ document.getElementById("demo").value=Math.round(x);
+ document.getElementById("demo1").value=Math.ceil(x);
+ document.getElementById("demo2").value=Math.trunc(x);
+ document.getElementById("demo3").value=Math.sign(x);
+ document.getElementById("demo4").value=Math.sqrt(x);
+ document.getElementById("demo5").value=Math.log(x);
+ document.getElementById("demo6").value=Math.log10(x);
+document.getElementById("demo7").value=Math.pow(x,y);
+document.getElementById("demo8").value=Math.abs(x);
+document.getElementById("demo9").value=Math.random(0,x);
+document.getElementById("demo10").value=Math.min(w,z,a,b);
+document.getElementById("demo11").value=Math.max(w,z,a,b);
+
+}
+</script>
+<h3 style="color:brown">Enter the Number:<input type="text" id="number"></h3>
+<h3 style="color:brown">Enter the power :<input type="text" id="n1"></h3>
+<h3 style="color:brown">Enter any number  :<input type="text" id="n2"></h3>
+<h3 style="color:brown">Enter any number  :<input type="text" id="n3"></h3>
+<h3 style="color:brown">Enter any number  :<input type="text" id="n4"></h3>
+<h3 style="color:brown">Enter any number  :<input type="text" id="n5"></h3>
+<button onClick="calc1()">click</button>
+<br>
+<h4 style="color:green">Rounded Value:<input type="text" id="demo"></h4>
+<h4 style="color:green">Ceil Value:<input type="text" id="demo1"></h4>
+<h4 style="color:green">Trunc Value:<input type="text" id="demo2"></h4> 
+<h4 style="color:green">Sign Value:<input type="text" id="demo3"></h4>
+<h4 style="color:green">Square Root Value:<input type="text" id="demo4"></h4> 
+<h4 style="color:green">Log Value:<input type="text" id="demo5"></h4>
+<h4 style="color:green">Log10 Value:<input type="text" id="demo6"></h4>
+<h4 style="color:green">Power Value:<input type="text" id="demo7"></h4>
+<h4 style="color:green">Absolute Value:<input type="text" id="demo8"></h4>
+<h4 style="color:green">Random Value:<input type="text" id="demo9"></h4>
+<h4 style="color:green">Minimum Value:<input type="text" id="demo10"></h4>
+<h4 style="color:green">Maximum Value:<input type="text" id="demo11"></h4>
+
+</body>
+</html>
