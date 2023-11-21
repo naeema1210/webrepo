@@ -1,0 +1,114 @@
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    .error {
+      color: red;
+    }
+#container{ width: 600px;
+height: 600px;
+margin: 8px auto;
+padding: 5px;
+border: 5px solid black;
+}
+  </style>
+</head>
+<body>
+ <h1 style="color:brown;text-align:center;"><b><u><center>REGISTRATION FORM</center></u></b></h1>
+<br>
+<div id="container">
+  <form id="registrationForm" onsubmit="return validateForm()">
+<b><label for="name">NAME:</label></b><br>
+    <input type="text" id="name" name="name"><br>
+    <span id="nameError" class="error"></span><br><br>
+<b><label for="name">DATE OF BIRTH:</label></b><br>
+    <input type="date" id="dob" name="dob"><br>
+<span id="dobError" class="error"></span><br><br>
+<b><label for="name">ADDRESS :</label></b><br>
+    <textarea rows="4" cols="25" name="address" id="address"></textarea><br>
+   <span id="addError" class="error"></span><br><br>
+<b><label for="name">PHONE NUMBER:</label></b><br>
+    <input type="text" id="pno" name="pno"><br>
+    <span id="pnoError" class="error"></span><br><br>
+    <b><label for="username">USERNAME:</label></b><br>
+    <input type="text" id="username" name="username"><br>
+    <span id="usernameError" class="error"></span><br><br>
+    <b><label for="email">EMAIL:</label></b><br>
+    <input type="email" id="email" name="email"><br>
+    <span id="emailError" class="error"></span><br><br>
+   <b> <label for="password">PASSWORD:</label></b><br>
+    <input type="password" id="password" name="password"><br>
+    <span id="passwordError" class="error"></span><br><br>
+    <b><input type="submit" value="SUBMIT"></b>
+  </form>
+</div>
+  <script>
+    function validateForm() {
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const name=document.getElementById('name').value;
+      const address=document.getElementById('address').value;
+      const pno=document.getElementById('pno').value;
+     const  dob=document.getElementById('dob').value;
+      const usernameError = document.getElementById('usernameError');
+      const emailError = document.getElementById('emailError');
+      const passwordError = document.getElementById('passwordError');
+      const nameError = document.getElementById('nameError');
+      const addError= document.getElementById('addError');
+      const pnoError= document.getElementById('pnoError');
+      const dobError= document.getElementById('dobError');
+      let valid = true;
+      if (username === '') {
+        usernameError.textContent = 'Username is required';
+        valid = false;
+      } else {
+        usernameError.textContent = '';
+      }
+      if (dob === '') {
+        dobError.textContent = 'Date of birth is required';
+        valid = false;
+      } else {
+        dobError.textContent = '';
+      }
+      if (address === '') {
+        addError.textContent = 'Address is required';
+        valid = false;
+      } else {
+        addError.textContent = '';
+      }
+      if (email === '') {
+        emailError.textContent = 'Email is required';
+        valid = false;
+      } else {
+        emailError.textContent = '';
+      }
+     if (pno=== '') {
+        pnoError.textContent = 'Phone number is required';
+        valid = false;
+      } else if (pno.length < 10) {
+        pnoError.textContent = 'Phone number must contain 10 digits';
+        valid = false;
+      } else {
+        pnoError.textContent = '';
+      }
+      if (password === '') {
+        passwordError.textContent = 'Password is required';
+        valid = false;
+      } else if (password.length < 9) {
+        passwordError.textContent = 'Password must be at least 8 characters';
+        valid = false;
+      } else {
+        passwordError.textContent = '';
+      }
+     if (name === '') {
+        nameError.textContent = 'Name is required';
+        valid = false;
+      } else {
+        nameError.textContent = '';
+      }
+      return valid;
+    }
+  </script>
+</body>
+</html>

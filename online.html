@@ -1,0 +1,130 @@
+<html>
+<head>
+<style>
+body {
+  font-family: Amasis MT Pro Black,times new roman;
+  font-size:20;
+  background-color:pink;
+}
+.container {
+  max-width: 980px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 5px solid green;
+  border-radius: 15px;
+  background-color: white;
+}
+#options {
+  margin-top: 10px;
+  margin-left:20px;
+  max-width: 10px;
+}
+button {
+  margin-top: 40px;
+  padding: 10px 30px;
+  background-color: blue;
+  font-family:times new roman;
+  font-size:15;
+  color: white;
+  border: 10;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: grey;
+}
+</style>
+<body>
+<h1 style="color:black;text-align:center;font-family:Algerian;font-size:50;"><u>QUIZ TIME</u></h1>
+<hr>
+<div class="container">
+   <b> <div id="question"></div></b>
+    <div id="options"></div>
+   <b> <div id="result"></div></b>
+    <button id="nextButton">Next</button>   
+  </div>
+<script>
+const questions = [
+  {
+    question: "Name the National animal of India ?",
+    options: ["tiger", "lion", "elephant", "cat"],
+    answer: "tiger"
+  },
+  {
+    question: "Name the national flower of India ?",
+    options: ["lotus", "daisy", "rose", "jasmine"],
+    answer: "lotus"
+  },
+  {
+    question: "Name the National bird of India ?",
+    options: ["pigeon", "parrot", "peacock", "hornbill"],
+    answer: "peacock"
+  },
+  {
+    question: "How many vowels are there in the English alphabet ?",
+    options: ["7", "6", "5", "3"],
+    answer: "5"
+  },
+   {
+    question: "Rainbow consist of how many colours?",
+    options: ["5", "7", "5", "14"],
+    answer: "7"
+  },
+  {
+    question: "How many days are there in a week??",
+    options: ["5", "7", "6", "3"],
+    answer: "7"
+  },
+];
+let currentQuestion = 0;
+let score = 0;
+
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
+const resultElement = document.getElementById("result");
+const nextButton = document.getElementById("nextButton");
+function displayQuestion() {
+  const q = questions[currentQuestion];
+  questionElement.textContent = q.question;
+  optionsElement.innerHTML = "";
+  q.options.forEach(option => {
+    const button = document.createElement("button");
+    button.textContent = option;
+    button.addEventListener("click", () => checkAnswer(option));
+    optionsElement.appendChild(button);
+  });
+}
+
+function checkAnswer(answer) {
+  const q = questions[currentQuestion];
+  if (answer === q.answer) {
+    score++;
+    resultElement.textContent = "Correct!";
+  } else {
+    resultElement.textContent = "Incorrect!";
+  }
+  nextButton.style.display = "block";
+}
+
+nextButton.addEventListener("click", () => {
+  currentQuestion++;
+  resultElement.textContent = "";
+  if (currentQuestion < questions.length) {
+    displayQuestion();
+    nextButton.style.display = "none";
+  } else {
+    showResult();
+  }
+});
+
+function showResult() {
+  questionElement.textContent = `You scored ${score} out of ${questions.length}!`;
+  optionsElement.innerHTML = "";
+  nextButton.style.display = "none";
+}
+displayQuestion();
+</script>
+</body>
+</html>
+
+  
