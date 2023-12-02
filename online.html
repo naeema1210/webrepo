@@ -46,7 +46,7 @@ button:hover {
 <script>
 const questions = [
   {
-    question: "Name the National animal of India ?",
+    question: "Name the national animal of India ?",
     options: ["tiger", "lion", "elephant", "cat"],
     answer: "tiger"
   },
@@ -56,7 +56,7 @@ const questions = [
     answer: "lotus"
   },
   {
-    question: "Name the National bird of India ?",
+    question: "Name the national bird of India ?",
     options: ["pigeon", "parrot", "peacock", "hornbill"],
     answer: "peacock"
   },
@@ -101,7 +101,8 @@ function checkAnswer(answer) {
     score++;
     resultElement.textContent = "Correct!";
   } else {
-    resultElement.textContent = "Incorrect!";
+    resultElement.textContent = answer+" is Incorrect!";
+    document.getElementById("cans").innerHTML="Correct answer:"+q.answer;
   }
   nextButton.style.display = "block";
 }
